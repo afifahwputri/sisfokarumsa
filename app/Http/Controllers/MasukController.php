@@ -44,7 +44,7 @@ class MasukController extends Controller
     public function update($id, Request $request)
     {
         $this->validate($request,[
-           'nodaftar' => 'nodaftar'
+           'nodaftar' => 'required'
         ]);
      
         $masuk = Masuk::find($id);
@@ -55,6 +55,12 @@ class MasukController extends Controller
         $masuk->status = $request->status;
         $masuk->tgl_keluar = $request->tgl_keluar;
         $masuk->save();
+        return redirect('/masuk');
+    }
+    public function delete($id)
+    {
+        $masuk = Masuk::find($id);
+        $masuk->delete();
         return redirect('/masuk');
     }
 }

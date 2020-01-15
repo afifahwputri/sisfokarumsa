@@ -55,4 +55,10 @@ class KeluarController extends Controller
         $keluar->save();
         return redirect('/keluar');
     }
+    public function delete($id)
+    {
+        $keluar = Keluar::find($id);
+        $keluar->delete();
+        return redirect('/keluar');
+    }
 }

@@ -24,18 +24,18 @@
 	<table border="1"  class="table table-bordered">
 		<tr>
 			<th>No Daftar</th>
+			<th>No Kartu</th>
 			<th>Tgl Daftar</th>
 			<th>ID Ranjang</th>
 			<th>Status</th>
 			<th>Tanggal Keluar</th>
-			<th>No Kartu</th>
 			<th>Opsi</th>
 			
 		</tr>
 		@foreach($masuk as $m)
 		<tr>
 			<td>{{ $m->nodaftar }}</td>
-			<td>{{ $m->nokartu }}</td>
+			<td>{{ $m->pasien->nokartu }}</td>
 			<td>{{ $m->tgl_daftar }}</td>
 			<td>{{ $m->idranjang }}</td>
 			<td>{{ $m->status }}</td>

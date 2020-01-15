@@ -32,6 +32,7 @@
 			<th>Agama</th>
 			<th>Gol Darah</th>
 			<th>Jenis Kelamin</th>
+			<th>Kelas</th>
 			<th>Opsi</th>
 			
 		</tr>
@@ -46,6 +47,7 @@
 			<td>{{ $p->agama }}</td>
 			<td>{{ $p->goldar }}</td>
 			<td>{{ $p->jenis_kelamin }}</td>
+			<td>{{ $p->idkelas }}</td>
 			
 			<td>
 				<a class="btn btn-warning btn-sm" href="/pasien/edit/{{ $p->id }}">Edit</a>

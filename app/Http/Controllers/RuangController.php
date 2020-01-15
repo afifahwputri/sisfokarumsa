@@ -55,4 +55,10 @@ class RuangController extends Controller
         $ruang->save();
         return redirect('/ruang');
     }
+    public function delete($id)
+    {
+        $ruang = Ruang::find($id);
+        $ruang->delete();
+        return redirect('/ruang');
+    }
 }

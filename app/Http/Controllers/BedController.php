@@ -55,4 +55,10 @@ class BedController extends Controller
         $bed->save();
         return redirect('/bed');
     }
+    public function delete($id)
+    {
+        $bed = Bed::find($id);
+        $bed->delete();
+        return redirect('/bed');
+    }
 }

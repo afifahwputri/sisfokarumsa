@@ -52,4 +52,10 @@ class KelasController extends Controller
         $kelas->save();
         return redirect('/kelas');
     }
+    public function delete($id)
+    {
+        $kelas = Kelas::find($id);
+        $kelas->delete();
+        return redirect('/kelas');
+    }
 }

@@ -24,6 +24,7 @@ class DataPasien extends Migration
             $table->string('agama',15);
             $table->string('goldar',2);
             $table->string('jenis_kelamin',15);
+            $table->integer('idkelas');
 
             $table->timestamps();
         });

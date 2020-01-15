@@ -36,15 +36,16 @@ class PasienController extends Controller
             'tgl_lahir' => $request->tgl_lahir,
             'agama' => $request->agama,
             'goldar' => $request->goldar,
-            'jenis_kelamin' => $request->jenis_kelamin
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'idkelas' => $request->idkelas
         ]);
  
         return redirect('/pasien');
     }
     public function edit($id)
     {
-       $pasien = Pasien::find($id);
-       return view('pasien_edit', ['pasien' => $pasien]);
+       $pasien = Pasien::where('id',$id)->get();
+       return view('pasien_edit', compact('pasien'));
     }
     public function update($id, Request $request)
     {
@@ -63,7 +64,14 @@ class PasienController extends Controller
         $pasien->agama = $request->agama;
         $pasien->goldar = $request->goldar;
         $pasien->jenis_kelamin = $request->jenis_kelamin;
+        $pasien->idkelas = $request->idkelas;
         $pasien->save();
+        return redirect('/pasien');
+    }
+    public function delete($id)
+    {
+        $pasien = Pasien::find($id);
+        $pasien->delete();
         return redirect('/pasien');
     }
 }

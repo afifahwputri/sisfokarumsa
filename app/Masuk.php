@@ -8,4 +8,11 @@ class Masuk extends Model
 {
     protected $table = "masuk";
     protected $fillable = ['nodaftar','nokartu','tgl_daftar','idranjang','status','tgl_keluar'];
+
+    public function pasien()
+    {
+    	return $this->hasOne('App\Pasien');
+    }
+    
 }
+
